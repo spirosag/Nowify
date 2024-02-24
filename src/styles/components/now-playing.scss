@@ -24,12 +24,22 @@
   }
 
   &__image {
-    box-shadow: 1px 1px 16px -2px rgba(0, 0, 0, .3);
-    height: auto;
-    /* max-width: 60vw; */
+    position: relative;
     max-height: 95vh;
     width: 100%;
     object-fit: contain;
+    display: block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 1px 1px 16px -2px rgba(0,0,0,.3);
+      z-index: -1;
+    }
   }
 
   &__details {
